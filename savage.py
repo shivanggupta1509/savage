@@ -4,18 +4,18 @@ import random
 import re
 from telethon.sync import TelegramClient, events
 
-api_id = '28400734'
-api_hash = '9db8ca267f73280bac4672dbb60d16ea'
-phone_number = '+917069804816'
+api_id = '20639314'
+api_hash = 'c0d42d19a01fc9939d5feeec2200568f'
+phone_number = '+37120599684'
 file_path = 'data.txt'
-group_usernames = ['onyxchecker_bot']
+group_usernames = ['alterchkbot']
 approved_messages = set()
 client = TelegramClient('session_name', api_id, api_hash)
 cmd_file = 'cmds.txt'
 
 # Flags to control sending
 send_cards_flag = True
-authorized_user_id = '6303436440'  # Replace 'your_user_id' with your actual user ID
+authorized_user_id = '6817283315'  # Replace 'your_user_id' with your actual user ID
 
 def read_commands():
     with open(cmd_file, 'r') as file:
@@ -185,7 +185,7 @@ async def handle_stop(event):
 async def forward_approved_messages(event):
     sender = await event.get_sender()
 
-    if sender.username == 'onyxchecker_bot' and event.is_private:
+    if sender.username == 'alterchkbot' and event.is_private:
         if 'Approved!' in event.message.text:
             if event.id not in approved_messages:
                 print("Message contains 'approved'. Forwarding...")
